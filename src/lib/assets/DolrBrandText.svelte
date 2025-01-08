@@ -2,7 +2,7 @@
 	let { class: _class } = $props();
 </script>
 
-<svg class={_class} fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class={_class} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87 18">
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"

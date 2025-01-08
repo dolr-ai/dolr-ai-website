@@ -38,11 +38,13 @@
 				class="basis-[25%] border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
 				Intelligent governance
 			</div>
-			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
+			<div class="basis-[12.5%] border border-b-0 border-white/20"></div>
 		</div>
 		<div class="flex h-194 w-full gap-0">
 			{#each { length: 5 }}
-				<div class="h-full flex-1 border border-b-0 border-r-0 border-white/20"></div>
+				<div
+					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
+				</div>
 			{/each}
 		</div>
 		<div class="flex w-full gap-0">
@@ -53,7 +55,7 @@
 				<div class=" absolute left-12 top-12 text-10/14 uppercase text-white/50">YRAL</div>
 			</div>
 			<div
-				class="relative flex basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
+				class="relative flex basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 p-50 text-center text-18/32">
 				<div class="text-start text-54/64 font-medium uppercase">Yral</div>
 				<div class="text-start text-20/28 text-white/60">
 					Fully on-chain SocialFi platform that lets you earn from the time you spend on social
@@ -66,27 +68,31 @@
 					<span>Try Now &nbsp;↗</span>
 				</a>
 			</div>
-			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
+			<div class="basis-[12.5%] border border-b-0 border-white/20"></div>
 		</div>
 		<div class="flex h-48 w-full gap-0">
 			{#each { length: 5 }}
-				<div class="h-full flex-1 border border-b-0 border-r-0 border-white/20"></div>
+				<div
+					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
+				</div>
 			{/each}
 		</div>
 		<div class="flex h-144 w-full gap-0">
 			{#each { length: 5 }}
-				<div class="h-full flex-1 border border-r-0 border-white/20"></div>
+				<div class="h-full flex-1 border [&:not(:last-child)]:border-r-0 border-white/20"></div>
 			{/each}
 		</div>
 		<div class="mt-144 flex h-48 w-full gap-0">
 			{#each { length: 5 }}
-				<div class="h-full flex-1 border border-b-0 border-r-0 border-white/20"></div>
+				<div
+					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
+				</div>
 			{/each}
 		</div>
 		<div class="flex w-full gap-0">
 			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
 			<div
-				class="relative flex basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
+				class="relative flex basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 p-50 text-center text-18/32">
 				<div class="text-start text-54/64 font-medium">ICpump.fun</div>
 				<div class="text-start text-20/28 text-white/60">
 					A project that lets you create and trade tokens within minutes, ranging from memecoins to
@@ -104,11 +110,11 @@
 				<img src={cubePipe} alt="ICPump.fun" class="w-full max-w-350 object-cover" />
 				<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">ICpump.fun</div>
 			</div>
-			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
+			<div class="basis-[12.5%] border border-b-0 border-white/20"></div>
 		</div>
 		<div class="flex h-48 w-full gap-0">
 			{#each { length: 5 }}
-				<div class="h-full flex-1 border border-r-0 border-white/20"></div>
+				<div class="h-full flex-1 border [&:not(:last-child)]:border-r-0 border-white/20"></div>
 			{/each}
 		</div>
 	</div>

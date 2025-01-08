@@ -15,14 +15,15 @@ const generateFontScale = (scale: [number, number][]) =>
 const linearSpacingScale = generateScale([
 	...Array(101).keys(),
 	...[
-		0.5, 1.5, 2.5, 3.5, 112, 120, 128, 144, 194, 208, 224, 240, 256, 272, 320, 342, 350, 442, 480,
-		560, 656, 816
+		0.5, 1.5, 2.5, 3.5, 108, 112, 120, 128, 144, 150, 180, 194, 208, 224, 240, 256, 272, 300, 320,
+		342, 350, 442, 480, 560, 656, 816, 1246
 	]
 ]);
 const linearBorderWidthScale = generateScale([0, 0.5, 1, 2, 4]);
 const linearBorderRadiusScale = generateScale([0, 2, 4, 6, 8, 12, 16, 24, 32, 48, 64]);
 const fontScale = generateFontScale([
 	[10, 14],
+	[14, 20],
 	[14, 22],
 	[18, 22],
 	[18, 28],

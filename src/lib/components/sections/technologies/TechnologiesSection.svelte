@@ -35,14 +35,14 @@
 </script>
 
 <section class="my-112 h-screen snap-x snap-mandatory snap-start bg-black font-switzer text-white">
-	<div class="flex flex-col px-44 pb-14">
+	<div class="flex flex-col px-180">
 		<div class="text-5xl">Unleashing the Power</div>
 		<div class="flex items-center gap-12">
 			<span class="text-primary text-5xl font-medium">of Decentralized Technologies</span>
 			<FourPointedStar class="h-72 w-72 text-white" />
 		</div>
 	</div>
-	<div class="flex w-full items-center gap-20 overflow-x-auto pl-44">
+	<div class="flex w-full pt-60 items-center gap-32 overflow-x-auto pl-180 pr-64">
 		{#each technologies as technology}
 			<TechnologyCard
 				title={technology.title}
