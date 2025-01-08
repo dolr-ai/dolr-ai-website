@@ -42,7 +42,7 @@
 			<FourPointedStar class="h-72 w-72 text-white" />
 		</div>
 	</div>
-	<div class="flex w-full pt-60 items-center gap-32 overflow-x-auto pl-180 pr-64">
+	<div class="flex w-full pt-60 items-center gap-32 overflow-x-auto hide-scrollbar pl-180 pr-64">
 		{#each technologies as technology}
 			<TechnologyCard
 				title={technology.title}

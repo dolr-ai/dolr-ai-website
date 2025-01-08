@@ -4,3 +4,13 @@
 
 /* Switzer font */
 @import url('https://fonts.cdnfonts.com/css/switzer?styles=135298,135294,135296,135299,135287');
+
+/* Class to hide scrollbar*/
+
+.hide-scrollbar {
+	scrollbar-width: none;
+	-ms-overflow-style: none; /* IE */
+}
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
