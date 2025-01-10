@@ -1,9 +1,9 @@
 <script lang="ts">
-	import FourPointedStar from '$lib/assets/FourPointedStar.svelte';
-	import sphereLaced from '$lib/assets/sphere-laced.webp';
-	import pyramidDoubleAlt from '$lib/assets/pyramid-double-alt.webp';
-	import helix from '$lib/assets/helix.webp';
-	import sphereInterlaced from '$lib/assets/sphere-interlaced.webp';
+	import FourPointedStar from './FourPointedStar.svelte';
+	import sphereLaced from './sphere-laced.webp';
+	import pyramidDoubleAlt from './pyramid-double-alt.webp';
+	import helix from './helix.webp';
+	import sphereInterlaced from './sphere-interlaced.webp';
 	import TechnologyCard, { type TechnologyCardProps } from './TechnologyCard.svelte';
 
 	const technologies: TechnologyCardProps[] = [

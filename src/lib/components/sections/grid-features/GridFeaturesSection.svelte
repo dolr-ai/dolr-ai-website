@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ringsStacked from '$lib/assets/rings-stacked.webp';
-	import chartRings from '$lib/assets/chart-rings.webp';
+	import ringsStacked from './rings-stacked.webp';
+	import chartRings from './chart-rings.webp';
 </script>
 
 <section

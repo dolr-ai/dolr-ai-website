@@ -2,6 +2,7 @@
 	import DolrBrandLogo from '$lib/assets/DolrBrandLogo.svelte';
 	import DolrBrandText from '$lib/assets/DolrBrandText.svelte';
 	import Button from '../button/Button.svelte';
+	import { scrollToWaitlistEmailInput } from '../sections/footer/Footer.svelte';
 </script>
 
 <div class="pointer-events-none fixed top-32 z-50 w-full items-center justify-between">
@@ -12,6 +13,12 @@
 			<DolrBrandLogo class="h-34 w-34" />
 			<DolrBrandText class="h-17 text-white" />
 		</a>
-		<Button size="small">Join waitlist</Button>
+		<Button
+			size="small"
+			onclick={() => {
+				scrollToWaitlistEmailInput();
+			}}>
+			Join waitlist
+		</Button>
 	</nav>
 </div>

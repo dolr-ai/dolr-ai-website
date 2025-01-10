@@ -1,6 +1,6 @@
 <script lang="ts">
-	import donutRings from '$lib/assets/donut-rings.webp';
-	import cubePipe from '$lib/assets/cube-pipe.webp';
+	import donutRings from './donut-rings.webp';
+	import cubePipe from './cube-pipe.webp';
 </script>
 
 <section
@@ -63,7 +63,8 @@
 					Social Cloud which you can utilise and solve the cold start problem for your project.
 				</div>
 				<a
-					href="#"
+					href="https://yral.com"
+					target="_blank"
 					class="absolute right-50 top-50 flex items-center gap-8 text-18/28 font-light capitalize text-primary underline-offset-4 hover:underline">
 					<span>Try Now &nbsp;↗</span>
 				</a>
@@ -100,7 +101,8 @@
 					platform, giving power and influence back to your user base.
 				</div>
 				<a
-					href="#"
+					href="https://icpump.fun/"
+					target="_blank"
 					class="absolute right-50 top-50 flex items-center gap-8 text-18/28 font-light capitalize text-primary underline-offset-4 hover:underline">
 					<span>Try Now &nbsp;↗</span>
 				</a>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import bgFlare from '$lib/assets/bg-flare.webp';
-	import pyramidDouble from '$lib/assets/pyramid-double.webp';
-	import cubeStacked from '$lib/assets/cube-stacked.webp';
-	import crystalLattice from '$lib/assets/crystal-lattice.webp';
-	import sphereRings from '$lib/assets/sphere-rings.webp';
-	import cubeAbstract from '$lib/assets/cube-abstract.webp';
+	import featuresBg from './features-bg.webp';
+	import pyramidDouble from './pyramid-double.webp';
+	import cubeStacked from './cube-stacked.webp';
+	import crystalLattice from './crystal-lattice.webp';
+	import sphereRings from './sphere-rings.webp';
+	import cubeAbstract from './cube-abstract.webp';
 
 	const cards = [
 		{
@@ -44,7 +44,7 @@
 	class="my-112 relative flex w-full snap-x snap-mandatory snap-start flex-col items-center gap-96 bg-black font-switzer text-white">
 	<div class="absolute top-44 z-0 h-screen overflow-hidden">
 		<img
-			src={bgFlare}
+			src={featuresBg}
 			alt="background flare"
 			class="w-full -translate-y-2/3 -rotate-[135deg] brightness-50" />
 	</div>

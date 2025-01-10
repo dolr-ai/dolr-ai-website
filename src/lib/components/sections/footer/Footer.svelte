@@ -1,15 +1,28 @@
+<script lang="ts" context="module">
+	export const waitlistEmailInputId: string = 'waitlist-email-input';
+	export const footerSectionId: string = 'footer';
+
+	export function scrollToWaitlistEmailInput() {
+		document.getElementById(footerSectionId)?.scrollIntoView({ behavior: 'smooth' });
+		document.getElementById(waitlistEmailInputId)?.focus({ preventScroll: true });
+	}
+</script>
+
 <script lang="ts">
 	import DolrBrandLogo from '$lib/assets/DolrBrandLogo.svelte';
 	import DolrBrandText from '$lib/assets/DolrBrandText.svelte';
 	import TelegramIcon from '$lib/assets/TelegramIcon.svelte';
 	import XIcon from '$lib/assets/XIcon.svelte';
 	import Button from '$lib/components/button/Button.svelte';
+
+	const links = [
+		{ href: '#', text: 'Read more' },
+		{ href: '#', text: 'Talk to the Team' },
+		{ href: 'https://internetcomputer.org/', text: 'Internet Computer' }
+	];
 </script>
 
-<footer class="w-full mt-28 pt-150 pb-300 bg-black relative overflow-hidden">
-	<div class="absolute -bottom-10 flex items-start justify-center h-240 px-108 w-full z-1">
-		<DolrBrandText class="text-white/10 w-full" />
-	</div>
+<footer id={footerSectionId} class="w-full mt-28 pt-150 bg-black relative overflow-hidden">
 	<div
 		class="h-300 absolute -top-150 w-full pointer-events-none z-0"
 		style="background: radial-gradient(50% 50% at 50% 50%, rgba(255, 0, 108, 0.2) 0%, rgba(0, 0, 0, 0) 80%)">
@@ -33,9 +46,11 @@
 				</a>
 			</div>
 			<p class="pt-42 flex flex-col text-14/20 gap-20 text-white/60">
-				<a href="#" class="text-white text-16 font-medium">Read more</a>
-				<a href="#" class="text-white text-16 font-medium">Talk to the Team</a>
-				<a href="#" target="_blank" class="text-white text-16 font-medium">Internet Computer</a>
+				{#each links as { href, text }, index}
+					<a {href} class="text-white text-16 hover:underline underline-offset-4 font-medium">
+						{text}
+					</a>
+				{/each}
 			</p>
 		</div>
 		<div class="flex flex-col basis-1/3 gap-74">
@@ -48,9 +63,10 @@
 			<div class="flex flex-col gap-16">
 				<div class="flex items-center gap-16">
 					<input
+						id={waitlistEmailInputId}
 						type="email"
 						placeholder="youremail@domain.com"
-						class="text-14/22 w-full px-14 py-7 bg-white/5 placeholder:text-white/25 text-white rounded-8 border border-white/5 focus:outline-none" />
+						class="text-14/22 w-full px-14 py-7 bg-white/5 focus:bg-black placeholder:text-white/25 text-white focus:outline-primary focus:outline-1 transition-colors rounded-8 border border-white/5 focus:outline-none" />
 					<Button size="small">Subscribe</Button>
 				</div>
 				<div class="text-14/20 text-white/40">
@@ -59,5 +75,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="flex items-start justify-center pt-90 h-242 translate-y-30 px-108 w-full z-1">
+		<DolrBrandText class="text-white/10 w-full" />
 	</div>
 </footer>
