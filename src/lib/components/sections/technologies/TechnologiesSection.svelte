@@ -34,7 +34,8 @@
 	];
 </script>
 
-<section class="my-112 h-screen snap-x snap-mandatory snap-start bg-black font-switzer text-white">
+<section
+	class="hidden sm:block my-112 h-screen snap-x snap-mandatory snap-start bg-black font-switzer text-white">
 	<div class="flex flex-col px-180">
 		<div class="text-5xl">Unleashing the Power</div>
 		<div class="flex items-center gap-12">
