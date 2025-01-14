@@ -46,69 +46,73 @@
 		<img
 			src={featuresBg}
 			alt="background flare"
-			class="w-full -translate-y-2/3 -rotate-[135deg] brightness-50" />
+			class="w-full -translate-y-1/2 sm:-translate-y-2/3 -rotate-[135deg] brightness-50" />
 	</div>
-	<div class="pt-224 z-1 flex flex-col gap-16">
-		<div class="flex flex-col items-center gap-8 text-5xl font-medium">
-			<div class="text-white">Empower Your App with a Scalable</div>
+	<div class="pt-224 z-1 flex items-center flex-col gap-16">
+		<div class="hidden sm:flex flex-col items-center gap-8 text-64/80 font-medium px-32">
+			<div class="text-white text-center">Empower Your App with a Scalable,</div>
 			<div class="flex items-center gap-16">
-				<div class="text-primary text-5xl font-medium">Token-Enabled Backend</div>
-				<div class="text-5xl">↗</div>
+				<div class="text-primary font-medium xl:whitespace-nowrap">Token-Enabled Backend</div>
+				<div class="">↗</div>
 			</div>
 		</div>
-		<div class="max-w-4xl text-center text-lg text-white/80">
+		<div class="text-28/36 sm:hidden text-center">
+			Empower Your App with a Scalable, <span class="text-primary">Token-Enabled Backend</span>
+			 ↗
+		</div>
+		<div class="max-w-4xl text-center text-14/18 sm:text-18/28 px-24 text-white/80">
 			Thousands of users trust DOLR AI to bring the next revolution in social Web3. Explore a
 			complete plug-and-play ecosystem providing true decentralisation, scalability, and the power
 			of AI at your hands.
 		</div>
 	</div>
-	<div class="mx-auto flex max-w-6xl flex-col gap-24 px-32">
-		<div class="flex items-center gap-24">
+	<div class="mx-auto flex max-w-6xl flex-col gap-24 px-24 sm:px-32">
+		<div class="flex flex-col sm:flex-row items-center gap-24">
 			{@render Card(
 				cards[0].imgSrc,
 				cards[0].title,
 				cards[0].description,
-				'width: 70%; transform: translate(0,50%);'
+				'w-248 -translate-x-16 translate-y-1/2'
 			)}
 			{@render Card(
 				cards[1].imgSrc,
 				cards[1].title,
 				cards[1].description,
-				'width: 55%; transform: translate(-10%,50%);'
+				'w-208 translate-x-[-10%] translate-y-1/2'
 			)}
 			{@render Card(
 				cards[2].imgSrc,
 				cards[2].title,
 				cards[2].description,
-				'width: 70%; transform: translate(5%,45%); rotate: 20deg;'
+				'w-268 -translate-x-24 translate-y-[45%] rotate-[20deg]'
 			)}
 		</div>
-		<div class="flex items-center gap-24">
+		<div class="flex flex-col sm:flex-row items-center gap-24">
 			{@render Card(
 				cards[3].imgSrc,
 				cards[3].title,
 				cards[3].description,
-				'width: 55%; transform: translate(0,50%); rotate: 5deg;'
+				'w-194 sm:w-320 translate-x-[-16%] translate-y-2/3 sm:translate-y-1/2 rotate-[5deg]'
 			)}
 			{@render Card(
 				cards[4].imgSrc,
 				cards[4].title,
 				cards[4].description,
-				'width: 55%; transform: translate(-32%,32%); rotate: -30deg;'
+				'w-194 sm:w-320 translate-x-[-16%] translate-y-2/3 sm:translate-y-1/2 rotate-[-30deg]'
 			)}
 		</div>
 	</div>
 </section>
 
-{#snippet Card(imgSrc: string, title: string, description: string, style: string)}
+{#snippet Card(imgSrc: string, title: string, description: string, imgClass: string)}
 	<div
-		class="h-320 rounded-16 relative flex flex-1 flex-col gap-16 overflow-hidden border-[1px] border-[#232323] bg-[#08090B] p-24">
-		<div class="text-xl font-semibold">{title}</div>
-		<div class="text-sm text-white/60">
+		class="min-h-320 rounded-16 relative flex flex-1 flex-col gap-16 overflow-hidden border-[1px] border-[#232323] bg-[#08090B] p-24">
+		<div class="text-18/24 sm:text-20/28 font-semibold">{title}</div>
+		<div class="text-14/22 text-white/60">
 			{description}
 		</div>
 		<div class="h-240 absolute flex w-full items-center justify-center">
-			<img src={imgSrc} alt={title} {style} />
+			<img src={imgSrc} alt={title} class={imgClass} />
 		</div>
 	</div>
 {/snippet}

@@ -4,18 +4,18 @@
 </script>
 
 <section
-	class="flex snap-x snap-mandatory snap-start flex-col items-center gap-64 overflow-hidden bg-gradient-to-b from-black via-[#080A0B] via-[20%] to-black py-112 font-switzer text-white">
-	<div class="flex items-center justify-center gap-32">
-		<div class="h-1 w-256 flex-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
+	class="flex snap-x snap-mandatory snap-start flex-col items-center overflow-hidden bg-gradient-to-b from-black via-[#080A0B] via-[20%] to-black py-112 font-switzer text-white">
+	<div class="flex w-full items-center justify-center gap-16 sm:gap-32">
+		<div class="h-1 flex-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
 		<div
 			class="shrink-0 bg-gradient-to-r from-[#FFF] to-primary bg-clip-text text-center text-lg font-medium text-transparent">
 			Our products
 		</div>
-		<div class="h-1 w-256 flex-1 bg-gradient-to-r from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
+		<div class="h-1 flex-1 bg-gradient-to-r from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
 	</div>
-	<div class="flex flex-col gap-48">
-		<div class="text-center text-5xl font-semibold">
-			Pioneering projects <span class="text-primary">on DOLR AI</span>
+	<div class="flex flex-col pt-24 sm:pt-64 sm:gap-48 gap-24">
+		<div class="text-center text-28/36 sm:text-48/64 font-medium">
+			Pioneering projects on <span class="text-primary">DOLR AI</span>
 		</div>
 		<div class="mx-auto max-w-4xl px-16 text-center text-lg text-white/80">
 			Thousands of users trust DOLR AI to bring the next revolution in social Web3. Explore a
@@ -23,7 +23,7 @@
 			of AI at your hands.
 		</div>
 	</div>
-	<div class="w-full pt-80">
+	<div class="w-full pt-120 sm:block hidden">
 		<div class="flex w-full gap-0">
 			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
 			<div
@@ -117,6 +117,82 @@
 		<div class="flex h-48 w-full gap-0">
 			{#each { length: 5 }}
 				<div class="h-full flex-1 border [&:not(:last-child)]:border-r-0 border-white/20"></div>
+			{/each}
+		</div>
+	</div>
+	<div class="w-full pt-60 sm:hidden block">
+		<div class="flex w-full gap-0">
+			<div class="basis-[8%] border border-b-0 border-r-0 border-white/20"></div>
+			<div
+				class="basis-[84%] border flex flex-col border-b-0 border-r-0 border-white/20 text-center text-14/32">
+				<div class="flex items-center justify-between divide-x-1 divide-white/20">
+					<div class="px-16 py-20 flex-1">Intelligent governance</div>
+					<div class="px-16 py-20 flex-1">Rapid token creation</div>
+				</div>
+				<div class="flex items-center px-16 py-20 border-t-1 border-t-white/20 justify-center">
+					Solve the cold start problem
+				</div>
+			</div>
+			<div class="basis-[8%] border border-b-0 border-white/20"></div>
+		</div>
+		<div class="flex w-full gap-0">
+			<div class="basis-[8%] border border-r-0 border-white/20"></div>
+			<div
+				class="basis-[84%] border flex flex-col border-b-0 border-r-0 border-white/20 text-center text-14/32">
+				<div class="h-50 w-full"></div>
+				<div
+					class="border-t-1 border-t-white/20 flex items-center py-24 px-16 relative justify-center">
+					<img src={donutRings} alt="Yral" class="w-full max-w-180 object-cover" />
+					<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">YRAL</div>
+				</div>
+				<div
+					class="border-t-1 border-t-white/20 flex flex-col items-start relative justify-center p-24">
+					<div class="text-24/36">YRAL</div>
+					<div class="text-14/20 text-left text-white/60">
+						Fully on-chain SocialFi platform that lets you earn from the time you spend on social
+						media, with thousands of interconnected users and counting. YRAL adds to the thriving
+						Social Cloud which you can utilise and solve the cold start problem for your project.
+					</div>
+				</div>
+				<div class="border-t-1 border-t-white/20 flex items-center justify-center p-24">
+					<a
+						href="https://yral.com"
+						target="_blank"
+						class="text-18/28 font-light uppercase text-primary underline-offset-4 hover:underline">
+						<span>Try Now &nbsp;↗</span>
+					</a>
+				</div>
+				<div class="border-t-1 h-100 border-t-white/20 flex items-center justify-center p-24"></div>
+				<div
+					class="border-t-1 border-t-white/20 flex items-center py-24 px-16 relative justify-center">
+					<img src={cubePipe} alt="ICPump.fun" class="w-full max-w-180 object-cover" />
+					<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">ICpump.fun</div>
+				</div>
+				<div
+					class="border-t-1 border-t-white/20 flex flex-col items-start relative justify-center p-24">
+					<div class="text-24/36">ICpump.fun</div>
+					<div class="text-14/20 text-left text-white/60">
+						A project that lets you create and trade tokens within minutes, ranging from memecoins
+						to DAOs. A showcase for how DOLR AI empowers you to build the governance economy of your
+						platform, giving power and influence back to your user base.
+					</div>
+				</div>
+				<div class="border-t-1 border-white/20 border-b-1 flex items-center justify-center p-24">
+					<a
+						href="https://icpump.fun/"
+						target="_blank"
+						class="text-18/28 font-light uppercase text-primary underline-offset-4 hover:underline">
+						<span>Try Now &nbsp;↗</span>
+					</a>
+				</div>
+			</div>
+			<div class="basis-[8%] border border-white/20"></div>
+		</div>
+		<div class="h-58 flex w-full">
+			{#each { length: 3 }}
+				<div
+					class="h-full first:basis-[8%] basis-[84%] last:basis-[8%] flex-1 border border-t-0 [&:not(:last-child)]:border-r-0 border-white/20">
+				</div>
 			{/each}
 		</div>
 	</div>

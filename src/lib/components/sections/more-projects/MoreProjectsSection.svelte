@@ -38,24 +38,26 @@
 		<img
 			src={projectsBg}
 			alt="background flare"
-			class="w-full absolute -top-[150%] rotate-[100deg] z-1" />
-		<div class="flex flex-col items-center gap-8 text-5xl font-medium z-2">
+			class="w-full absolute scale-[1.2] sm:scale-100 -top-180 sm:-top-[150%] rotate-[100deg] z-1" />
+		<div class="flex flex-col relative items-center gap-8 text-5xl font-medium z-2">
 			<div class="flex items-center justify-center gap-8">
-				<div class="w-272 h-1 flex-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]">
+				<div class="w-92 sm:w-272 h-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]">
 				</div>
 				<div
 					class="to-primary text-18/28 shrink-0 bg-gradient-to-r from-white bg-clip-text text-center font-medium uppercase text-transparent">
 					Projects
 				</div>
 				<div
-					class="w-272 h-[1px] flex-1 bg-gradient-to-r from-[#FFAAC8] via-[#6E072C] to-[#190E14]">
+					class="w-92 sm:w-272 h-[1px] bg-gradient-to-r from-[#FFAAC8] via-[#6E072C] to-[#190E14]">
 				</div>
 			</div>
 		</div>
-		<div class="text-48/64 text-center font-medium text-white z-2">Explore</div>
-		<div class="text-primary text-48/64 text-center font-medium z-2">More Projects</div>
+		<div class="text-28/38 sm:text-48/64 text-center font-medium text-white z-2">Explore</div>
+		<div class="text-primary text-28/38 sm:text-48/64 text-center font-medium z-2">
+			More Projects
+		</div>
 	</div>
-	<div class="z-1 mx-auto grid max-w-6xl grid-cols-3 gap-32 px-32">
+	<div class="z-1 mx-auto flex flex-col sm:grid max-w-6xl sm:grid-cols-3 gap-32 px-32">
 		{#each cards as { imgSrc, title, description, href, onclick }, index}
 			{@render Card(imgSrc, title, description, href, onclick)}
 		{/each}

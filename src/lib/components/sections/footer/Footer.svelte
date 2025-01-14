@@ -16,9 +16,9 @@
 	import Button from '$lib/components/button/Button.svelte';
 
 	const links = [
-		{ href: '#', text: 'Read more' },
-		{ href: '#', text: 'Talk to the Team' },
-		{ href: 'https://internetcomputer.org/', text: 'Internet Computer' }
+		{ href: 'https://medium.com/@DOLR_AI', text: 'Read more ↗' },
+		{ href: 'https://discord.gg/DOLR_AI', text: 'Talk to the Team ↗' },
+		{ href: 'https://internetcomputer.org/', text: 'Internet Computer ↗' }
 	];
 </script>
 
@@ -31,21 +31,24 @@
 		<div class="h-1 w-1/2 mx-auto bg-gradient-to-r from-transparent via-[#8F8F8FAB] to-transparent">
 		</div>
 	</div>
-	<div class="px-108 flex w-full gap-32 items-start justify-between">
-		<div class="flex basis-1/2 flex-col gap-32">
-			<div class="flex items-center gap-4">
-				<DolrBrandLogo class="h-34 w-34" />
-				<DolrBrandText class="h-17 text-white" />
+	<div class="px-32 sm:px-108 flex sm:flex-row flex-col w-full gap-32 items-start justify-between">
+		<div class="flex w-full sm:basis-1/2 flex-col gap-32">
+			<div class="flex sm:flex-col gap-32 flex-row items-center justify-between sm:items-start">
+				<div class="flex items-center gap-4">
+					<DolrBrandLogo class="h-34 w-34" />
+					<DolrBrandText class="h-17 text-white" />
+				</div>
+				<div class="flex items-center gap-16">
+					<a href="https://x.com/DOLR_AI" target="_blank">
+						<XIcon class="w-24 h-24"></XIcon>
+					</a>
+					<a href="https://t.me/dolr_ai" target="_blank">
+						<TelegramIcon class="w-24 h-24"></TelegramIcon>
+					</a>
+				</div>
 			</div>
-			<div class="flex items-center gap-16">
-				<a href="https://x.com/dolr_ai" target="_blank">
-					<XIcon class="w-24 h-24"></XIcon>
-				</a>
-				<a href="https://t.me/dolr_ai" target="_blank">
-					<TelegramIcon class="w-24 h-24"></TelegramIcon>
-				</a>
-			</div>
-			<p class="pt-42 flex flex-col text-14/20 gap-20 text-white/60">
+			<p
+				class="pt-32 sm:pt-42 border-t-1 border-t-white/20 sm:border-t-0 flex flex-col text-14/20 gap-20 text-white/60">
 				{#each links as { href, text }, index}
 					<a {href} class="text-white text-16 hover:underline underline-offset-4 font-medium">
 						{text}
@@ -53,7 +56,8 @@
 				{/each}
 			</p>
 		</div>
-		<div class="flex flex-col basis-1/3 gap-74">
+		<div
+			class="flex flex-col sm:basis-1/3 pt-32 border-t-1 border-t-white/20 sm:border-t-0 gap-32 sm:gap-74">
 			<div class="flex flex-col text-14/22">
 				<div class="text-white font-medium">Subscribe to our newsletter</div>
 				<div class="text-white/60 text-16 font-medium">
@@ -76,7 +80,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex items-start justify-center pt-90 h-242 translate-y-30 px-108 w-full z-1">
+	<div
+		class="flex items-start justify-center pt-90 h-242 translate-y-5 sm:translate-y-30 px-32 sm:px-108 w-full z-1">
 		<DolrBrandText class="text-white/10 w-full" />
 	</div>
 </footer>
