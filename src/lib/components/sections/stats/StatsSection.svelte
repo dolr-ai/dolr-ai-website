@@ -4,7 +4,7 @@
 </script>
 
 <section
-	class="mt-112 mb-256 relative flex snap-x snap-mandatory overflow-hidden sm:overflow-visible snap-start flex-col items-center gap-16 bg-gradient-to-b from-black via-[#080A0B] via-[20%] to-black font-switzer text-white">
+	class="sm:mt-112 mb-256 relative flex snap-x snap-mandatory overflow-hidden sm:overflow-visible snap-start flex-col items-center gap-16 bg-gradient-to-b from-black via-[#080A0B] via-[20%] to-black font-switzer text-white">
 	<div class="flex items-center justify-center gap-8">
 		<div class="h-1 w-64 flex-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
 		<div

@@ -177,7 +177,7 @@
 			<div class="basis-[8%] border border-b-0 border-white/20"></div>
 		</div>
 	</div>
-	<div class="h-42 flex w-full">
+	<div class="h-42 flex sm:hidden w-full">
 		<div class="h-full basis-[8%] flex-1 border border-b-0 border-r-0 border-white/20"></div>
 		<button
 			class="bg-primary flex h-full basis-[84%] cursor-wait items-center justify-center text-14/22 font-medium">
@@ -185,7 +185,7 @@
 		</button>
 		<div class="h-full basis-[8%] flex-1 border border-b-0 border-white/20"></div>
 	</div>
-	<div class="h-58 flex w-full">
+	<div class="h-58 sm:hidden flex w-full">
 		{#each { length: 3 }}
 			<div
 				class="h-full first:basis-[8%] basis-[84%] last:basis-[8%] flex-1 border [&:not(:last-child)]:border-r-0 border-white/20">

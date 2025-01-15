@@ -34,16 +34,20 @@
 	];
 </script>
 
-<section
-	class="hidden sm:block my-112 h-screen snap-x snap-mandatory snap-start bg-black font-switzer text-white">
-	<div class="flex flex-col px-180">
-		<div class="text-5xl">Unleashing the Power</div>
-		<div class="flex items-center gap-12">
-			<span class="text-primary text-5xl font-medium">of Decentralized Technologies</span>
-			<FourPointedStar class="h-72 w-72 text-white" />
+<section class="my-112 h-screen snap-x snap-mandatory snap-start bg-black font-switzer text-white">
+	<div class="flex flex-col text-28/36 sm:text-48/64 font-medium px-24 sm:px-180">
+		<div class="text-white">Unleashing the Power</div>
+		<div class="flex items-end gap-12">
+			<div class="flex flex-col lg:flex-row lg:gap-12 items-start">
+				<span class="text-primary whitespace-nowrap">of Decentralized</span>
+				<span class="text-primary">Technologies</span>
+			</div>
+			<FourPointedStar
+				class="h-32 w-32 shrink-0 -translate-x-32 sm:translate-x-0 sm:h-72 sm:w-72 text-white" />
 		</div>
 	</div>
-	<div class="flex w-full pt-60 items-center gap-32 overflow-x-auto hide-scrollbar pl-180 pr-64">
+	<div
+		class="flex w-full pt-64 items-center gap-24 sm:gap-32 overflow-x-auto hide-scrollbar pl-24 sm:pl-180 sm:pr-64 pr-32">
 		{#each technologies as technology}
 			<TechnologyCard
 				title={technology.title}
