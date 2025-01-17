@@ -4,20 +4,25 @@
 </script>
 
 <section
-	class="flex snap-x snap-mandatory snap-start flex-col items-center overflow-hidden bg-gradient-to-b from-black via-[#080A0B] via-[20%] to-black py-112 font-switzer text-white">
-	<div class="flex w-full items-center justify-center gap-16 sm:gap-32">
+	class="flex snap-always snap-start flex-col items-center overflow-hidden bg-gradient-to-b from-black via-[#080A0B] via-[20%] to-black my-108 pt-144 pb-64 sm:pb-144 font-switzer text-white">
+	<div class="flex w-full items-center justify-center max-w-3xl gap-16 sm:gap-12">
 		<div class="h-1 flex-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
 		<div
-			class="shrink-0 bg-gradient-to-r from-[#FFF] to-primary bg-clip-text text-center text-lg font-medium text-transparent">
+			class="shrink-0 uppercase bg-gradient-to-r from-[#FFF] to-primary bg-clip-text text-center text-lg font-medium text-transparent">
 			Our products
 		</div>
 		<div class="h-1 flex-1 bg-gradient-to-r from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
 	</div>
 	<div class="flex flex-col pt-24 sm:pt-64 sm:gap-48 gap-24">
-		<div class="text-center text-28/36 sm:text-48/64 font-medium">
-			Pioneering projects on <span class="text-primary">DOLR AI</span>
+		<div class="text-center hidden sm:block text-48/64 font-medium">
+			Pioneering Projects On <span class="text-primary">DOLR AI</span>
 		</div>
-		<div class="mx-auto max-w-4xl px-16 text-center text-lg text-white/80">
+		<div class="text-center sm:hidden text-28/36 font-medium">
+			Pioneering Projects On
+			<br />
+			<span class="text-primary">DOLR AI</span>
+		</div>
+		<div class="mx-auto max-w-4xl px-16 text-center text-14/18 sm:text-18/28 text-white/80">
 			Thousands of users trust DOLR AI to bring the next revolution in social Web3. Explore a
 			complete plug-and-play ecosystem providing true decentralisation, scalability, and the power
 			of AI at your hands.

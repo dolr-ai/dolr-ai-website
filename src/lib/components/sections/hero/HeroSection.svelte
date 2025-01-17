@@ -3,7 +3,7 @@
 </script>
 
 <section
-	class="flex h-screen w-screen bg-[#1B090B] snap-y snap-mandatory flex-col items-center justify-center gap-80 sm:gap-120 bg-cover bg-center font-switzer text-white relative">
+	class="flex h-screen w-screen bg-[#1B090B] snap-always snap-start flex-col items-center justify-center gap-80 sm:gap-120 bg-cover bg-center font-switzer text-white relative">
 	<video
 		src="/hero-bg.mp4"
 		class="absolute inset-0 z-0 w-full h-full object-cover object-right"

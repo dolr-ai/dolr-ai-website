@@ -15,13 +15,13 @@
 </svelte:head>
 
 <Navbar />
-
-<HeroSection />
-<TechnologiesSection />
-<StatsSection />
-<GridFeaturesSection />
-<FeaturesSection />
-<ProductsSection />
-<MoreProjectsSection />
-
-<Footer />
+<div class="snap-y snap-mandatory overflow-y-auto h-screen">
+	<HeroSection />
+	<TechnologiesSection />
+	<StatsSection />
+	<GridFeaturesSection />
+	<FeaturesSection />
+	<ProductsSection />
+	<MoreProjectsSection />
+	<Footer />
+</div>

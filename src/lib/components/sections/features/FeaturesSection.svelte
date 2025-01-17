@@ -41,14 +41,14 @@
 </script>
 
 <section
-	class="my-112 relative flex w-full snap-x snap-mandatory snap-start flex-col items-center gap-96 bg-black font-switzer text-white">
-	<div class="absolute top-44 z-0 h-screen overflow-hidden">
+	class="pb-108 sm:pt-108 relative flex w-full snap-always snap-start flex-col items-center gap-96 bg-black font-switzer text-white">
+	<div class="absolute top-0 z-0 h-screen overflow-hidden">
 		<img
 			src={featuresBg}
 			alt="background flare"
 			class="w-full -translate-y-1/2 sm:-translate-y-2/3 -rotate-[135deg] brightness-50" />
 	</div>
-	<div class="pt-224 z-1 flex items-center flex-col gap-16">
+	<div class="pt-144 sm:pt-224 z-1 flex items-center flex-col gap-16">
 		<div class="hidden sm:flex flex-col items-center gap-8 text-64/80 font-medium px-32">
 			<div class="text-white text-center">Empower Your App with a Scalable,</div>
 			<div class="flex items-center gap-16">
@@ -58,7 +58,7 @@
 		</div>
 		<div class="text-28/36 sm:hidden text-center">
 			Empower Your App with a Scalable, <span class="text-primary">Token-Enabled Backend</span>
-			 ↗
+			↗
 		</div>
 		<div class="max-w-4xl text-center text-14/18 sm:text-18/28 px-24 text-white/80">
 			Thousands of users trust DOLR AI to bring the next revolution in social Web3. Explore a

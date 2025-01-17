@@ -22,7 +22,9 @@
 	];
 </script>
 
-<footer id={footerSectionId} class="w-full mt-28 pt-150 bg-black relative overflow-hidden">
+<footer
+	id={footerSectionId}
+	class="w-full snap-normal snap-start mt-28 pt-84 sm:pt-128 bg-black relative overflow-hidden">
 	<div
 		class="h-300 absolute -top-150 w-full pointer-events-none z-0"
 		style="background: radial-gradient(50% 50% at 50% 50%, rgba(255, 0, 108, 0.2) 0%, rgba(0, 0, 0, 0) 80%)">

@@ -33,18 +33,18 @@
 </script>
 
 <section
-	class="my-112 relative flex w-full snap-x snap-mandatory snap-start flex-col items-center gap-96 bg-black font-switzer text-white overflow-hidden">
-	<div class="z-1 relative pt-80 flex flex-col gap-4">
+	class="py-112 mb-36 relative flex w-full snap-always snap-start flex-col items-center gap-96 bg-black font-switzer text-white overflow-hidden">
+	<div class="z-1 relative pt-32 flex flex-col gap-4">
 		<img
 			src={projectsBg}
 			alt="background flare"
-			class="w-full absolute scale-[1.2] sm:scale-100 -top-180 sm:-top-[150%] rotate-[100deg] z-1" />
+			class="w-full absolute scale-[1.2] sm:scale-125 -top-180 sm:-top-[250%] rotate-[90deg] z-1" />
 		<div class="flex flex-col relative items-center gap-8 text-5xl font-medium z-2">
 			<div class="flex items-center justify-center gap-8">
 				<div class="w-92 sm:w-272 h-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]">
 				</div>
 				<div
-					class="to-primary text-18/28 shrink-0 bg-gradient-to-r from-white bg-clip-text text-center font-medium uppercase text-transparent">
+					class="to-primary text-14/22 sm:text-18/28 shrink-0 bg-gradient-to-r from-white bg-clip-text text-center font-medium uppercase text-transparent">
 					Projects
 				</div>
 				<div
@@ -83,6 +83,6 @@
 			<img src={imgSrc} alt={title} class="h-full w-full object-cover" />
 		</div>
 		<div class="text-18/28 pt-12 font-semibold">{title}</div>
-		<div class="text-14/22 line-clamp-3 text-white/60">{description}</div>
+		<div class="text-14/22 line-clamp-3 text-white/60 text-start">{description}</div>
 	</svelte:element>
 {/snippet}

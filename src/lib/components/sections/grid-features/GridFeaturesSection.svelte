@@ -4,8 +4,8 @@
 </script>
 
 <section
-	class="mt-112 sm:my-112 sm:h-screen w-full snap-x snap-mandatory snap-start gap-0 bg-black font-switzer text-white">
-	<div class="hidden sm:flex sm:flex-col sm:items-center">
+	class="sm:h-screen mt-108 w-full h-screen snap-always snap-start gap-0 bg-black font-switzer text-white">
+	<div class="hidden h-full sm:flex sm:flex-col sm:items-center">
 		<div class="h-144 flex w-full gap-0">
 			{#each { length: 5 }}
 				<div
@@ -13,7 +13,7 @@
 				</div>
 			{/each}
 		</div>
-		<div class="flex h-44 w-full gap-0">
+		<div class="flex flex-1 w-full gap-0">
 			{#each { length: 5 }}
 				<div
 					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
@@ -46,13 +46,13 @@
 			</div>
 			<div class="basis-1/5 border border-b-0 border-white/20"></div>
 		</div>
-		<div class="flex h-44 w-full gap-0">
+		<div class="flex flex-1 w-full gap-0">
 			{#each { length: 5 }}
 				<div class="h-full flex-1 border [&:not(:last-child)]:border-r-0 border-white/20"></div>
 			{/each}
 		</div>
 	</div>
-	<div class="flex flex-col sm:hidden">
+	<div class="flex pt-108 flex-col sm:hidden">
 		<div class="h-58 flex w-full">
 			{#each { length: 3 }}
 				<div
@@ -79,23 +79,23 @@
 			<div class="basis-[8%] border border-b-0 border-white/20"></div>
 		</div>
 		<div class="flex w-full gap-0">
-			<div class="basis-[8%] border border-b-0 border-r-0 border-white/20"></div>
+			<div class="basis-[8%] border border-r-0 border-white/20"></div>
 			<div
-				class="basis-[84%] text-14/20 text-white/60 items-center justify-center border border-b-0 border-r-0 border-white/20 p-24">
+				class="basis-[84%] text-14/20 text-white/60 items-center justify-center border border-r-0 border-white/20 p-24">
 				AI systems are shaping decisions across industries, and with increasing automation, the need
 				to verify and validate the data driving these models is more urgent than ever. Tampered or
 				manipulated data will impact real human actions and possible cause dangerous situations
 				alongside a significant trust deficit in AI-driven processes.
 			</div>
-			<div class="basis-[8%] border border-b-0 border-white/20"></div>
+			<div class="basis-[8%] border border-white/20"></div>
 		</div>
 	</div>
 </section>
 
 <section
-	class="sm:mt-144 mb-144 sm:mb-0 sm:h-screen w-full snap-x snap-mandatory snap-start gap-0 bg-black font-switzer text-white">
-	<div class="sm:flex sm:flex-col hidden sm:items-center">
-		<div class="flex h-44 w-full gap-0">
+	class="sm:mt-144 mb-144 sm:mb-108 sm:h-screen w-full snap-always snap-start gap-0 bg-black font-switzer text-white">
+	<div class="sm:flex h-full sm:flex-col hidden sm:items-center">
+		<div class="flex flex-1 w-full gap-0">
 			{#each { length: 5 }}
 				<div
 					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
@@ -134,13 +134,13 @@
 			</button>
 			<div class="basis-1/5 border border-b-0 border-white/20"></div>
 		</div>
-		<div class="h-144 flex w-full gap-0">
+		<div class="flex-1 flex w-full gap-0">
 			{#each { length: 5 }}
 				<div class="h-full flex-1 border [&:not(:last-child)]:border-r-0 border-white/20"></div>
 			{/each}
 		</div>
 	</div>
-	<div class="flex flex-col sm:hidden">
+	<div class="flex flex-col pt-54 sm:hidden">
 		<div class="h-58 flex w-full">
 			{#each { length: 3 }}
 				<div
