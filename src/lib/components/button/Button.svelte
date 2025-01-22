@@ -7,7 +7,10 @@
 		variant?: 'primary' | 'secondary';
 		size?: 'regular' | 'small';
 		class?: string;
+		type?: string;
 		href?: string;
+		target?: string;
+		disabled?: boolean;
 	};
 
 	let {
@@ -16,7 +19,10 @@
 		href,
 		variant = 'primary',
 		size = 'regular',
-		class: _class
+		class: _class,
+		target,
+		type,
+		disabled
 	}: Props = $props();
 </script>
 
@@ -25,7 +31,10 @@
 	role="button"
 	tabindex={href ? 0 : undefined}
 	{href}
+	{target}
 	{onclick}
+	{type}
+	{disabled}
 	class={[
 		'rounded-8 border  font-switzer font-medium text-white transition-colors',
 		{
@@ -34,7 +43,8 @@
 			'border-white bg-transparent hover:bg-white/10 active:bg-white/5 backdrop-blur-sm':
 				variant === 'secondary',
 			'px-20 py-9 text-18/28': size === 'regular',
-			'px-14 py-7 text-14/22': size === 'small'
+			'px-14 py-7 text-14/22': size === 'small',
+			'opacity-80 pointer-events-none': disabled
 		},
 		_class
 	]}>

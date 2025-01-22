@@ -1,3 +1,11 @@
+<script lang="ts" context="module">
+	export const sectionId: string = 'footer';
+
+	export function scrollToTechnologiesSection() {
+		document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+	}
+</script>
+
 <script lang="ts">
 	import FourPointedStar from './FourPointedStar.svelte';
 	import sphereLaced from './sphere-laced.webp';
@@ -34,7 +42,7 @@
 	];
 </script>
 
-<section class="py-108 snap-always snap-start bg-black font-switzer text-white">
+<section id={sectionId} class="py-108 snap-always snap-start bg-black font-switzer text-white">
 	<div class="flex flex-col text-28/36 sm:text-48/64 font-medium px-24 sm:px-180">
 		<div class="text-white">Unleashing the Power</div>
 		<div class="flex items-end gap-12">

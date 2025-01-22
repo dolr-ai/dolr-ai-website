@@ -5,14 +5,13 @@
 
 <section
 	class="sm:mt-112 pt-108 pb-64 relative flex snap-always snap-start overflow-hidden sm:overflow-visible flex-col items-center gap-16 bg-gradient-to-b from-black via-[#080A0B] via-[20%] to-black font-switzer text-white">
-	<div class="flex items-center justify-center gap-8">
-		<div class="h-1 w-64 flex-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
+	<div class="flex items-center justify-center max-w-xl w-full gap-8">
+		<div class="h-1 flex-1 bg-gradient-to-l from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
 		<div
 			class="to-primary shrink-0 bg-gradient-to-r from-white bg-clip-text text-center text-14/22 sm:text-18/22 font-medium text-transparent">
 			Our stats
 		</div>
-		<div class="h-[1px] w-64 flex-1 bg-gradient-to-r from-[#FFAAC8] via-[#6E072C] to-[#190E14]">
-		</div>
+		<div class="h-[1px] flex-1 bg-gradient-to-r from-[#FFAAC8] via-[#6E072C] to-[#190E14]"></div>
 	</div>
 	<div class="flex flex-col gap-12 z-2">
 		<div class="text-center text-28/36 sm:text-48/64 font-semibold capitalize">
@@ -24,7 +23,7 @@
 				<span class="text-primary">the Network</span>
 			</div>
 		</div>
-		<div class="mx-auto max-w-4xl px-16 text-center text-14/18 sm:18/22 text-white/80">
+		<div class="mx-auto max-w-4xl px-16 text-center text-14/18 sm:text-18/28 text-white/80">
 			Thousands of users trust DOLR AI to bring the next revolution in social Web3. Explore a
 			complete plug-and-play ecosystem providing true decentralization, scalability, and the power
 			of AI at your hands.

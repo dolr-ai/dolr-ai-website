@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
 	export const waitlistEmailInputId: string = 'waitlist-email-input';
-	export const footerSectionId: string = 'footer';
+	export const sectionId: string = 'footer';
 
 	export function scrollToWaitlistEmailInput() {
-		document.getElementById(footerSectionId)?.scrollIntoView({ behavior: 'smooth' });
+		document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
 		document.getElementById(waitlistEmailInputId)?.focus({ preventScroll: true });
 	}
 </script>
@@ -20,10 +20,22 @@
 		{ href: 'https://discord.gg/DOLR_AI', text: 'Talk to the Team ↗' },
 		{ href: 'https://internetcomputer.org/', text: 'Internet Computer ↗' }
 	];
+
+	let email = $state('');
+	let isSubmitting = $state(false);
+	let isSubmitted = $state(false);
+
+	function handleSubmit(e: SubmitEvent) {
+		e.preventDefault();
+		isSubmitting = true;
+		setTimeout(() => {
+			isSubmitted = true;
+		}, 2000);
+	}
 </script>
 
 <footer
-	id={footerSectionId}
+	id={sectionId}
 	class="w-full snap-normal snap-start mt-28 pt-84 sm:pt-128 bg-black relative overflow-hidden">
 	<div
 		class="h-300 absolute -top-150 w-full pointer-events-none z-0"
@@ -67,18 +79,26 @@
 				</div>
 			</div>
 			<div class="flex flex-col gap-16">
-				<div class="flex items-center gap-16">
-					<input
-						id={waitlistEmailInputId}
-						type="email"
-						placeholder="youremail@domain.com"
-						class="text-14/22 w-full px-14 py-7 bg-white/5 focus:bg-black placeholder:text-white/25 text-white focus:outline-primary focus:outline-1 transition-colors rounded-8 border border-white/5 focus:outline-none" />
-					<Button size="small">Subscribe</Button>
-				</div>
-				<div class="text-14/20 text-white/40">
-					By submitting your email address, you agree to receive DOLR AI's monthly newsletter. For
-					more information, please read our privacy policy. You can always withdraw your consent.
-				</div>
+				{#if isSubmitted}
+					<div class="text-14/20 text-white/40">Thank you for subscribing!</div>
+				{:else}
+					<form onsubmit={handleSubmit} class="flex items-center gap-16">
+						<input
+							id={waitlistEmailInputId}
+							type="email"
+							required
+							bind:value={email}
+							placeholder="youremail@domain.com"
+							class="text-14/22 w-full px-14 py-7 bg-white/5 focus:bg-black placeholder:text-white/25 text-white focus:outline-primary focus:outline-1 transition-colors rounded-8 border border-white/5 focus:outline-none" />
+						<Button type="submit" size="small" disabled={isSubmitting}>
+							{isSubmitting ? 'Subscribing' : 'Subscribe'}
+						</Button>
+					</form>
+					<div class="text-14/20 text-white/40">
+						By submitting your email address, you agree to receive DOLR AI's monthly newsletter. For
+						more information, please read our privacy policy. You can always withdraw your consent.
+					</div>
+				{/if}
 			</div>
 		</div>
 	</div>

@@ -21,9 +21,7 @@
 			imgSrc: card2
 		},
 		{
-			onclick: () => {
-				scrollToWaitlistEmailInput();
-			},
+			href: 'https://forms.gle/yZqvvWgFvZxYqftR8',
 			title: 'Apply for a Grant',
 			description:
 				'Get funding to build your vision. Apply for developer grants and bring your project to life faster with DOLR AI’s plug-and-play tools.',
@@ -58,8 +56,8 @@
 		</div>
 	</div>
 	<div class="z-1 mx-auto flex flex-col sm:grid max-w-6xl sm:grid-cols-3 gap-32 px-32">
-		{#each cards as { imgSrc, title, description, href, onclick }, index}
-			{@render Card(imgSrc, title, description, href, onclick)}
+		{#each cards as { imgSrc, title, description, href }, index}
+			{@render Card(imgSrc, title, description, href)}
 		{/each}
 	</div>
 </section>

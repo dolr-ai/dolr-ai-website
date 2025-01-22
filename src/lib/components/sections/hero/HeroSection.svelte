@@ -1,12 +1,13 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
+	import { scrollToTechnologiesSection } from '../technologies/TechnologiesSection.svelte';
 </script>
 
 <section
 	class="flex h-screen w-screen bg-[#1B090B] snap-always snap-start flex-col items-center justify-center gap-80 sm:gap-120 bg-cover bg-center font-switzer text-white relative">
 	<video
 		src="/hero-bg.mp4"
-		class="absolute inset-0 z-0 w-full h-full object-cover object-right"
+		class="absolute inset-0 z-0 w-full h-full object-cover object-center"
 		autoplay
 		loop
 		muted>
@@ -49,11 +50,11 @@
 		</div>
 	</div>
 	<div class="flex items-center z-2 gap-20">
-		<Button class="flex items-center gap-12">
+		<Button target="_blank" href="https://dolr.ai/whitepaper" class="flex items-center gap-12">
 			<span>Whitepaper</span>
 			<span>→</span>
 		</Button>
 
-		<Button variant="secondary">Learn more</Button>
+		<Button onclick={scrollToTechnologiesSection} variant="secondary">Learn more</Button>
 	</div>
 </section>
