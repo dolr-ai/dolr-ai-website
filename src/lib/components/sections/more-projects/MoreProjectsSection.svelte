@@ -1,6 +1,5 @@
 <script lang="ts">
 	import projectsBg from './projects-bg.webp';
-	import { scrollToWaitlistEmailInput } from '../footer/Footer.svelte';
 	import card1 from './card-1.webp';
 	import card2 from './card-2.webp';
 	import card3 from './card-3.webp';

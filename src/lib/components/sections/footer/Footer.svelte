@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
 	export const waitlistEmailInputId: string = 'waitlist-email-input';
 	export const sectionId: string = 'footer';
 
