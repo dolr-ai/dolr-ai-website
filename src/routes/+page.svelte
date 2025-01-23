@@ -8,6 +8,11 @@
 	import ProductsSection from '$lib/components/sections/products/ProductsSection.svelte';
 	import StatsSection from '$lib/components/sections/stats/StatsSection.svelte';
 	import TechnologiesSection from '$lib/components/sections/technologies/TechnologiesSection.svelte';
+
+	let scrollY = $state(0);
+	function handleScroll(event: Event) {
+		scrollY = (event?.target as HTMLDivElement)?.scrollTop || 0;
+	}
 </script>
 
 <svelte:head>
@@ -15,13 +20,15 @@
 </svelte:head>
 
 <Navbar />
-<div class="snap-y snap-mandatory overflow-y-auto h-screen">
+<root
+	onscroll={handleScroll}
+	class="snap-y snap-mandatory block overflow-y-auto overflow-hidden h-screen">
 	<HeroSection />
-	<TechnologiesSection />
+	<TechnologiesSection {scrollY} />
 	<StatsSection />
 	<GridFeaturesSection />
 	<FeaturesSection />
 	<ProductsSection />
 	<MoreProjectsSection />
 	<Footer />
-</div>
+</root>
