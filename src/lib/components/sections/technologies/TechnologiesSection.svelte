@@ -1,18 +1,14 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
+	import sphereLaced from './sphere-laced.webp';
+	import pyramidDoubleAlt from './pyramid-double-alt.webp';
+	import helix from './helix.webp';
+	import sphereInterlaced from './sphere-interlaced.webp';
+
 	export const sectionId: string = 'footer';
 
 	export function scrollToTechnologiesSection() {
 		document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
 	}
-</script>
-
-<script lang="ts">
-	import FourPointedStar from './FourPointedStar.svelte';
-	import sphereLaced from './sphere-laced.webp';
-	import pyramidDoubleAlt from './pyramid-double-alt.webp';
-	import helix from './helix.webp';
-	import sphereInterlaced from './sphere-interlaced.webp';
-	import TechnologyCard, { type TechnologyCardProps } from './TechnologyCard.svelte';
 
 	const technologies: TechnologyCardProps[] = [
 		{
@@ -42,6 +38,13 @@
 	];
 </script>
 
+<script lang="ts">
+	import FourPointedStar from './FourPointedStar.svelte';
+	import TechnologyCard, { type TechnologyCardProps } from './TechnologyCard.svelte';
+
+	let { scrollY } = $props();
+</script>
+
 <section id={sectionId} class="py-108 snap-always snap-start bg-black font-switzer text-white">
 	<div class="flex flex-col text-28/36 sm:text-48/64 font-medium px-24 sm:px-180">
 		<div class="text-white">Unleashing the Power</div>
@@ -50,17 +53,19 @@
 				<span class="text-primary whitespace-nowrap">of Decentralized</span>
 				<span class="text-primary">Technologies</span>
 			</div>
-			<FourPointedStar
-				class="h-32 w-32 shrink-0 -translate-x-32 sm:translate-x-0 sm:h-72 sm:w-72 text-white" />
+			<div style="transform: rotate({scrollY / 1.2}deg);">
+				<FourPointedStar
+					class="h-32 w-32 shrink-0 -translate-x-32 sm:translate-x-0 sm:h-72 sm:w-72 text-white" />
+			</div>
 		</div>
 	</div>
-	<div
-		class="flex w-full pt-64 items-center gap-24 sm:gap-32 overflow-x-auto hide-scrollbar pl-24 sm:pl-180 sm:pr-64 pr-32">
+	<technology-cards
+		class="flex w-full pt-64 items-center gap-24 sm:gap-32 pl-24 sm:pl-180 sm:pr-64 pr-32">
 		{#each technologies as technology}
 			<TechnologyCard
 				title={technology.title}
 				description={technology.description}
 				image={technology.image} />
 		{/each}
-	</div>
+	</technology-cards>
 </section>
