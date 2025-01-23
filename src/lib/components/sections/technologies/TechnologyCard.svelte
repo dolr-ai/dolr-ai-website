@@ -10,10 +10,13 @@
 	let titleParts = title.split(' ');
 </script>
 
-<div
+<technology-card
 	class="border-1 relative w-full sm:w-656 rounded-16 sm:rounded-32 flex shrink-0 flex-col overflow-hidden border-white/10 bg-black">
-	<div class="rounded-full h-194 w-194 bg-[#FF5B96] absolute top-0 left-0 z-1 blur-[172px]"></div>
-	<div class="flex flex-col gap-12 z02 px-16 sm:px-44 py-24">
+	<div
+		style="background: radial-gradient(circle, #331822 0%, rgba(0,0,0,0) 90% );"
+		class="rounded-full h-442 w-442 absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 z-1">
+	</div>
+	<div class="flex flex-col gap-12 z-2 px-16 sm:px-44 py-24">
 		<div class="sm:text-40/64 text-28/36 font-medium">
 			{titleParts[0]}
 			<span class="text-primary">{titleParts.slice(1).join(' ')}</span>
@@ -28,4 +31,4 @@
 			<img src={image} alt={title} class="w-full object-cover object-top" />
 		</div>
 	</div>
-</div>
+</technology-card>
