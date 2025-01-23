@@ -29,7 +29,7 @@
 			of AI at your hands.
 		</div>
 	</div>
-	<div class="w-full overflow-hidden scale-[2] origin-top sm:scale-100">
+	<div class="w-full overflow-hidden scale-[2] -mt-64 origin-top sm:scale-100">
 		<img src={bg} alt="stats" class="w-full" />
 	</div>
 	<div class="w-full sm:flex items-end hidden -mt-144 z-2">
@@ -64,11 +64,11 @@
 	</div>
 	<div
 		class="absolute right-16 top-384 sm:right-240 sm:top-560 border-white/20 border bg-black rounded-12 p-16 flex flex-col gap-6">
-		<div class="text-primary font-semibold text-20/24 sm:text-32/40">130</div>
+		<div class="text-primary font-semibold text-20/24 sm:text-32/40">500+</div>
 		<div class="text-14/22 sm:text-18/28 text-white/65">
-			Node servers across 10 Node
+			Node servers across 30+ node
 			<br />
-			Clusters deployed globally
+			clusters deployed globally
 		</div>
 	</div>
 </section>

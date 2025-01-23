@@ -59,13 +59,14 @@
 			</div>
 		</div>
 	</div>
-	<technology-cards
-		class="flex w-full pt-64 items-center gap-24 sm:gap-32 pl-24 sm:pl-180 sm:pr-64 pr-32">
-		{#each technologies as technology}
-			<TechnologyCard
-				title={technology.title}
-				description={technology.description}
-				image={technology.image} />
-		{/each}
-	</technology-cards>
+	<div class="sm:pr-64 pr-32">
+		<technology-cards class="flex w-full pt-64 items-center gap-24 sm:gap-32 pl-24 sm:pl-180">
+			{#each technologies as technology}
+				<TechnologyCard
+					title={technology.title}
+					description={technology.description}
+					image={technology.image} />
+			{/each}
+		</technology-cards>
+	</div>
 </section>
