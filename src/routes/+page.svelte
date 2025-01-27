@@ -8,8 +8,8 @@
 	import ProductsSection from '$lib/components/sections/products/ProductsSection.svelte';
 	import StatsSection from '$lib/components/sections/stats/StatsSection.svelte';
 	import TechnologiesSection from '$lib/components/sections/technologies/TechnologiesSection.svelte';
-	import gsap from 'gsap';
-	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+	// import gsap from 'gsap';
+	// import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
 	let scrollY = $state(0);
@@ -18,32 +18,32 @@
 	}
 
 	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
-		const items = gsap.utils.toArray('technology-cards');
-		const pageWrapper = document.querySelector('root');
-
-		items.forEach((container: any, i) => {
-			const localItems = container.querySelectorAll('technology-card');
-			const distance = () => {
-				let lastItemBounds = localItems[localItems.length - 1].getBoundingClientRect(),
-					containerBounds = container.getBoundingClientRect();
-				return Math.max(0, lastItemBounds.right - containerBounds.right);
-			};
-			gsap.to(container, {
-				x: () => -distance(), // make sure it dynamically calculates things so that it adjusts to resizes
-				ease: 'none',
-				scrollTrigger: {
-					trigger: container,
-					start: 'top 128',
-					pinnedContainer: pageWrapper,
-					end: () => '+=' + distance(),
-					pin: pageWrapper,
-					scrub: true,
-					invalidateOnRefresh: true // will recalculate any function-based tween values on resize/refresh (making it responsive)
-				}
-			});
-		});
-
+		// gsap.registerPlugin(ScrollTrigger);
+		// const items = gsap.utils.toArray('technology-cards');
+		// const pageWrapper = document.querySelector('root');
+		// items.forEach((container: any, i) => {
+		// 	const localItems = container.querySelectorAll('technology-card');
+		// 	const distance = () => {
+		// 		let lastItemBounds = localItems[localItems.length - 1].getBoundingClientRect(),
+		// 			containerBounds = container.getBoundingClientRect();
+		// 		return Math.max(0, lastItemBounds.right - containerBounds.right);
+		// 	};
+		// 	gsap.to(container, {
+		// 		x: () => -distance(), // make sure it dynamically calculates things so that it adjusts to resizes
+		// 		ease: 'none',
+		// 		scrollTrigger: {
+		// 			trigger: container,
+		// 			start: 'top 128',
+		// 			pinnedContainer: pageWrapper,
+		// 			end: () => '+=' + distance(),
+		// 			pin: pageWrapper,
+		// 			scrub: true,
+		// 			invalidateOnRefresh: true // will recalculate any function-based tween values on resize/refresh (making it responsive)
+		// 		}
+		// 	});
+		// });
+		//
+		//
 		// let snapSections = gsap.utils.toArray('section');
 		// let snapper: (valueToSnap: number) => number;
 		// ScrollTrigger.create({
@@ -76,7 +76,9 @@
 </svelte:head>
 
 <Navbar />
-<root onscroll={handleScroll} class="block snap-y snap-mandatory">
+<root
+	onscroll={handleScroll}
+	class="block h-screen snap-y snap-mandatory overflow-hidden overflow-y-auto">
 	<HeroSection />
 	<TechnologiesSection {scrollY} />
 	<StatsSection />
