@@ -5,6 +5,7 @@
 	import crystalLattice from './crystal-lattice.webp';
 	import sphereRings from './sphere-rings.webp';
 	import cubeAbstract from './cube-abstract.webp';
+	import ArrowUpRightIcon from '$lib/assets/ArrowUpRightIcon.svelte';
 
 	const cards = [
 		{
@@ -53,12 +54,16 @@
 			<div class="text-white text-center">Empower Your App with a Scalable,</div>
 			<div class="flex items-center gap-16">
 				<div class="text-primary font-medium xl:whitespace-nowrap">Token-Enabled Backend</div>
-				<div class="">↗</div>
+				<ArrowUpRightIcon class="w-68 h-68 text-white" />
 			</div>
 		</div>
-		<div class="text-28/36 sm:hidden text-center">
-			Empower Your App with a Scalable, <span class="text-primary">Token-Enabled Backend</span>
-			↗
+		<div class="text-28/36 sm:hidden flex items-center gap-4 text-center">
+			<span>
+				Empower Your App with a Scalable, <span class="text-primary">
+					Token-Enabled Backend <ArrowUpRightIcon
+						class="w-28 h-28 inline-block -translate-y-2 text-white" />
+				</span>
+			</span>
 		</div>
 		<div class="max-w-4xl text-center text-14/18 sm:text-18/28 px-24 text-white/80">
 			Thousands of users trust DOLR AI to bring the next revolution in social Web3. Explore a

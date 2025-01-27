@@ -9,6 +9,8 @@
 </script>
 
 <script lang="ts">
+	import ArrowUpRightIcon from '$lib/assets/ArrowUpRightIcon.svelte';
+
 	import DolrBrandLogo from '$lib/assets/DolrBrandLogo.svelte';
 	import DolrBrandText from '$lib/assets/DolrBrandText.svelte';
 	import TelegramIcon from '$lib/assets/TelegramIcon.svelte';
@@ -16,9 +18,8 @@
 	import Button from '$lib/components/button/Button.svelte';
 
 	const links = [
-		{ href: 'https://medium.com/@DOLR_AI', text: 'Read more ↗' },
-		{ href: 'https://discord.gg/DOLR_AI', text: 'Talk to the Team ↗' },
-		{ href: 'https://internetcomputer.org/', text: 'Internet Computer ↗' }
+		{ href: 'https://medium.com/@DOLR_AI', text: 'Read more' },
+		{ href: 'mailto:dolr_team@gobazzinga.io', text: 'Talk to the Team' }
 	];
 
 	let email = $state('');
@@ -56,16 +57,21 @@
 					<a href="https://x.com/DOLR_AI" target="_blank">
 						<XIcon class="w-24 h-24"></XIcon>
 					</a>
-					<a href="https://t.me/dolr_ai" target="_blank">
+					<a href="https://t.me/sjhehgdfgzeh" target="_blank">
 						<TelegramIcon class="w-24 h-24"></TelegramIcon>
 					</a>
 				</div>
 			</div>
 			<p
 				class="pt-32 sm:pt-42 border-t-1 border-t-white/20 sm:border-t-0 flex flex-col text-14/20 gap-20 text-white/60">
-				{#each links as { href, text }, index}
-					<a {href} class="text-white text-16 hover:underline underline-offset-4 font-medium">
-						{text}
+				{#each links as { href, text }}
+					<a
+						{href}
+						class="flex items-center gap-4 text-16 hover:underline underline-offset-4 font-medium">
+						<span>
+							{text}
+						</span>
+						<ArrowUpRightIcon class="w-18 h-18" />
 					</a>
 				{/each}
 			</p>

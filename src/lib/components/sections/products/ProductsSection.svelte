@@ -1,6 +1,7 @@
 <script lang="ts">
 	import donutRings from './donut-rings.webp';
 	import cubePipe from './cube-pipe.webp';
+	import ArrowUpRightIcon from '$lib/assets/ArrowUpRightIcon.svelte';
 </script>
 
 <section
@@ -71,7 +72,8 @@
 					href="https://yral.com"
 					target="_blank"
 					class="absolute right-50 top-50 flex items-center gap-8 text-18/28 font-light capitalize text-primary underline-offset-4 hover:underline">
-					<span>Try Now &nbsp;↗</span>
+					<span>Try Now</span>
+					<ArrowUpRightIcon class="w-28 h-28" />
 				</a>
 			</div>
 			<div class="basis-[12.5%] border border-b-0 border-white/20"></div>
@@ -109,7 +111,8 @@
 					href="https://icpump.fun/"
 					target="_blank"
 					class="absolute right-50 top-50 flex items-center gap-8 text-18/28 font-light capitalize text-primary underline-offset-4 hover:underline">
-					<span>Try Now &nbsp;↗</span>
+					<span>Try Now</span>
+					<ArrowUpRightIcon class="w-28 h-28" />
 				</a>
 			</div>
 			<div
@@ -164,7 +167,8 @@
 						href="https://yral.com"
 						target="_blank"
 						class="text-18/28 font-light uppercase text-primary underline-offset-4 hover:underline">
-						<span>Try Now &nbsp;↗</span>
+						<span>Try Now</span>
+						<ArrowUpRightIcon class="w-28 h-28" />
 					</a>
 				</div>
 				<div class="border-t-1 h-100 border-t-white/20 flex items-center justify-center p-24"></div>
@@ -187,7 +191,8 @@
 						href="https://icpump.fun/"
 						target="_blank"
 						class="text-18/28 font-light uppercase text-primary underline-offset-4 hover:underline">
-						<span>Try Now &nbsp;↗</span>
+						<span>Try Now</span>
+						<ArrowUpRightIcon class="w-28 h-28" />
 					</a>
 				</div>
 			</div>

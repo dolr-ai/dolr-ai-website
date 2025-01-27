@@ -50,7 +50,10 @@
 		</div>
 	</div>
 	<div class="flex items-center z-2 gap-20">
-		<Button target="_blank" href="https://dolr.ai/whitepaper" class="flex items-center gap-12">
+		<Button
+			target="_blank"
+			href="https://dolr-ai.gitbook.io/dolr.ai"
+			class="flex items-center gap-12">
 			<span>Whitepaper</span>
 			<span>→</span>
 		</Button>
