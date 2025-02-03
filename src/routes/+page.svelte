@@ -75,7 +75,7 @@
 </svelte:head>
 
 <Navbar />
-<root onscroll={handleScroll} class="block snap-y snap-mandatory">
+<root onscroll={handleScroll} class="block snap-y snap-mandatory overflow-hidden sm:overflow-auto">
 	<HeroSection />
 	<TechnologiesSection {scrollY} />
 	<StatsSection />

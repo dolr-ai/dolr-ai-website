@@ -10,11 +10,12 @@
 	let titleParts = title.split(' ');
 </script>
 
-<technology-card class="p-2 bg-white/10 relative rounded-16 sm:rounded-32 overflow-hidden shrink-0">
+<technology-card
+	class="p-2 flex w-full sm:w-656 bg-white/10 relative rounded-16 sm:rounded-32 overflow-hidden shrink-0">
 	<div class="glow"></div>
 	<div class="fake-glow"></div>
 	<div
-		class="relative bg-black/75 w-full sm:w-656 rounded-16 sm:rounded-32 flex shrink-0 flex-col overflow-hidden">
+		class="relative bg-black/75 w-full rounded-16 sm:rounded-32 flex shrink-0 flex-col overflow-hidden">
 		<div class="flex flex-col gap-12 z-2 px-16 sm:px-44 py-24">
 			<div class="sm:text-40/64 text-28/36 font-medium">
 				{titleParts[0]}
