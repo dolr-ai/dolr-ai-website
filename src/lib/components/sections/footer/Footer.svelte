@@ -35,7 +35,7 @@
 	}
 </script>
 
-<footer
+<section
 	id={sectionId}
 	class="w-full snap-normal snap-start mt-28 pt-84 sm:pt-128 bg-black relative overflow-hidden">
 	<div
@@ -112,4 +112,4 @@
 		class="flex items-start justify-center pt-90 h-242 translate-y-5 sm:translate-y-30 px-32 sm:px-108 w-full z-1">
 		<DolrBrandText class="text-white/10 w-full" />
 	</div>
-</footer>
+</section>
