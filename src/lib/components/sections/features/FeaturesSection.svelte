@@ -39,6 +39,31 @@
 			imgSrc: cubeAbstract
 		}
 	];
+
+	function handleMouseMove(e: MouseEvent) {
+		const all = document.querySelectorAll('feature-card');
+		all.forEach((el) => {
+			const glowBlob = el.querySelector('.glow') as HTMLElement;
+			const fakeGlowBlob = el.querySelector('.fake-glow') as HTMLElement;
+			if (!glowBlob || !fakeGlowBlob) return;
+			const rec = fakeGlowBlob.getBoundingClientRect();
+			glowBlob.style.opacity = '1';
+
+			glowBlob.animate(
+				[
+					{
+						transform: `translate(${
+							e.clientX - rec.left - rec.width / 2
+						}px,${e.clientY - rec.top - rec.height / 2}px)`
+					}
+				],
+				{
+					duration: 300,
+					fill: 'forwards'
+				}
+			);
+		});
+	}
 </script>
 
 <section
@@ -71,25 +96,28 @@
 			of AI at your hands.
 		</div>
 	</div>
-	<div class="mx-auto flex max-w-6xl flex-col gap-24 px-24 sm:px-32">
+	<feature-cards
+		role="list"
+		onmousemove={handleMouseMove}
+		class="mx-auto flex max-w-6xl flex-col gap-24 px-24 sm:px-32">
 		<div class="flex flex-col sm:flex-row items-center gap-24">
 			{@render Card(
 				cards[0].imgSrc,
 				cards[0].title,
 				cards[0].description,
-				'w-248 -translate-x-16 translate-y-1/2'
+				'w-248 -translate-x-16 translate-y-1/2 group-hover:scale-105 scale:95 group-hover:rotate-2'
 			)}
 			{@render Card(
 				cards[1].imgSrc,
 				cards[1].title,
 				cards[1].description,
-				'w-208 translate-x-[-10%] translate-y-1/2'
+				'w-208 translate-x-[-10%] translate-y-1/2 group-hover:scale-105 scale:95 group-hover:rotate-2'
 			)}
 			{@render Card(
 				cards[2].imgSrc,
 				cards[2].title,
 				cards[2].description,
-				'w-268 -translate-x-24 translate-y-[45%] rotate-[20deg]'
+				'w-268 -translate-x-24 translate-y-[45%] rotate-[20deg] group-hover:scale-105 scale:95 group-hover:rotate-[18deg]'
 			)}
 		</div>
 		<div class="flex flex-col sm:flex-row items-center gap-24">
@@ -97,27 +125,57 @@
 				cards[3].imgSrc,
 				cards[3].title,
 				cards[3].description,
-				'w-194 sm:w-320 translate-x-[-16%] translate-y-2/3 sm:translate-y-1/2 rotate-[5deg]'
+				'w-194 sm:w-320 translate-x-[-16%] translate-y-2/3 sm:translate-y-1/2 rotate-[5deg] group-hover:scale-105 scale:95 group-hover:rotate-[3deg]'
 			)}
 			{@render Card(
 				cards[4].imgSrc,
 				cards[4].title,
 				cards[4].description,
-				'w-194 sm:w-320 translate-x-[-16%] translate-y-2/3 sm:translate-y-1/2 rotate-[-30deg]'
+				'w-194 sm:w-320 translate-x-[-16%] translate-y-2/3 sm:translate-y-1/2 rotate-[-30deg] group-hover:scale-105 scale:95 group-hover:rotate-[-28deg]'
 			)}
 		</div>
-	</div>
+	</feature-cards>
 </section>
 
 {#snippet Card(imgSrc: string, title: string, description: string, imgClass: string)}
-	<div
-		class="min-h-320 rounded-16 relative flex flex-1 flex-col gap-16 overflow-hidden border-[1px] border-[#232323] bg-[#08090B] p-24">
-		<div class="text-18/24 sm:text-20/28 font-semibold">{title}</div>
-		<div class="text-14/22 text-white/60">
-			{description}
+	<feature-card class="p-2 group block rounded-[1.1rem] relative overflow-hidden bg-[#2f35414a]">
+		<div class="glow"></div>
+		<div class="fake-glow"></div>
+		<div class="min-h-320 z-2 rounded-16 relative flex flex-1 flex-col gap-16 bg-[#0a0d1179] p-24">
+			<div class="text-18/24 sm:text-20/28 font-semibold">{title}</div>
+			<div class="text-14/22 text-white/60">
+				{description}
+			</div>
+			<div class="h-240 absolute flex w-full items-center justify-center">
+				<img src={imgSrc} alt={title} class={[imgClass, ' duration-[2s] transition-all']} />
+			</div>
 		</div>
-		<div class="h-240 absolute flex w-full items-center justify-center">
-			<img src={imgSrc} alt={title} class={imgClass} />
-		</div>
-	</div>
+	</feature-card>
 {/snippet}
+
+<style>
+	.glow {
+		filter: blur(40px);
+		position: absolute;
+		z-index: 1;
+		top: -7rem;
+		opacity: 0;
+		left: -7rem;
+		width: 28rem;
+		height: 28rem;
+		border-radius: 50%;
+		background: #45215857;
+		transition: all 300ms ease-in-out;
+	}
+
+	.fake-glow {
+		display: hidden;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+	}
+</style>

@@ -43,6 +43,31 @@
 	import TechnologyCard, { type TechnologyCardProps } from './TechnologyCard.svelte';
 
 	let { scrollY } = $props();
+
+	function handleMouseMove(e: MouseEvent) {
+		const all = document.querySelectorAll('technology-card');
+		all.forEach((el) => {
+			const glowBlob = el.querySelector('.glow') as HTMLElement;
+			const fakeGlowBlob = el.querySelector('.fake-glow') as HTMLElement;
+			if (!glowBlob || !fakeGlowBlob) return;
+			const rec = fakeGlowBlob.getBoundingClientRect();
+			glowBlob.style.opacity = '1';
+
+			glowBlob.animate(
+				[
+					{
+						transform: `translate(${
+							e.clientX - rec.left - rec.width / 2
+						}px,${e.clientY - rec.top - rec.height / 2}px)`
+					}
+				],
+				{
+					duration: 300,
+					fill: 'forwards'
+				}
+			);
+		});
+	}
 </script>
 
 <section id={sectionId} class="py-108 snap-always snap-start bg-black font-switzer text-white">
@@ -60,7 +85,10 @@
 		</div>
 	</div>
 	<div class="sm:pr-64 pr-32">
-		<technology-cards class="flex w-full pt-64 items-center gap-24 sm:gap-32 pl-24 sm:pl-180">
+		<technology-cards
+			role="list"
+			onmousemove={handleMouseMove}
+			class="flex w-full pt-64 items-center gap-24 sm:gap-32 pl-24 sm:pl-180">
 			{#each technologies as technology}
 				<TechnologyCard
 					title={technology.title}

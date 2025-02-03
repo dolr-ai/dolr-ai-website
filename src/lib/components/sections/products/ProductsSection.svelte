@@ -2,6 +2,46 @@
 	import donutRings from './donut-rings.webp';
 	import cubePipe from './cube-pipe.webp';
 	import ArrowUpRightIcon from '$lib/assets/ArrowUpRightIcon.svelte';
+
+	let canvasEl = $state<HTMLCanvasElement>();
+	let canvasEl2 = $state<HTMLCanvasElement>();
+
+	function random(min: number, max: number) {
+		return min + Math.random() * (max + 1 - min);
+	}
+
+	function drawStars(canvasEl: HTMLCanvasElement) {
+		if (!canvasEl) return;
+		const ctx = canvasEl.getContext('2d');
+
+		canvasEl.width = window.innerWidth;
+		canvasEl.height = window.innerHeight;
+
+		function stars() {
+			if (!ctx || !canvasEl) return;
+
+			for (let i = 0; i < 2500; i++) {
+				//Set up random elements
+				let xPos = random(2, canvasEl.width - 2);
+				let yPos = random(2, canvasEl.height - 2);
+				let size = random(0.1, 0.5);
+
+				//Add stars
+				ctx.fillStyle = '#ffffff';
+				ctx.fillRect(xPos, yPos, size, size);
+			}
+		}
+
+		stars();
+	}
+
+	$effect(() => {
+		canvasEl && drawStars(canvasEl);
+	});
+
+	$effect(() => {
+		canvasEl2 && drawStars(canvasEl2);
+	});
 </script>
 
 <section
@@ -29,39 +69,43 @@
 			of AI at your hands.
 		</div>
 	</div>
-	<div class="w-full pt-120 sm:block hidden">
+	<div class="w-full pt-120 sm:block hidden relative">
+		<canvas class="w-full hidden sm:block absolute z-1 opacity-75" bind:this={canvasEl}></canvas>
 		<div class="flex w-full gap-0">
-			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
+			<div class="basis-[12.5%] star-bg border border-b-0 border-r-0 border-white/20"></div>
 			<div
-				class="basis-[25%] border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
+				class="basis-[25%] star-bg border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
 				Solve the cold start problem
 			</div>
 			<div
-				class="basis-[25%] border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
+				class="basis-[25%] star-bg border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
 				Rapid token creation
 			</div>
 			<div
-				class="basis-[25%] border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
+				class="basis-[25%] star-bg border border-b-0 border-r-0 border-white/20 px-24 py-16 text-center text-18/32">
 				Intelligent governance
 			</div>
-			<div class="basis-[12.5%] border border-b-0 border-white/20"></div>
+			<div class="basis-[12.5%] star-bg border border-b-0 border-white/20"></div>
 		</div>
 		<div class="flex h-194 w-full gap-0">
 			{#each { length: 5 }}
 				<div
-					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
+					class="h-full flex-1 star-bg border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
 				</div>
 			{/each}
 		</div>
 		<div class="flex w-full gap-0">
-			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
+			<div class="basis-[12.5%] border star-bg border-b-0 border-r-0 border-white/20"></div>
 			<div
-				class="relative flex basis-[30%] items-center justify-center border border-b-0 border-r-0 border-white/20 px-62 py-98 text-18/32">
-				<img src={donutRings} alt="Yral" class="w-full max-w-350 object-cover" />
-				<div class=" absolute left-12 top-12 text-10/14 uppercase text-white/50">YRAL</div>
+				class="relative flex basis-[30%] group star-bg items-center justify-center border border-b-0 border-r-0 border-white/20 px-62 py-98 text-18/32">
+				<img
+					src={donutRings}
+					alt="Yral"
+					class="w-full max-w-350 object-cover group-hover:scale-105 group-hover:saturate-200 scale:95 transition-all duration-[2s] group-hover:rotate-2" />
+				<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">YRAL</div>
 			</div>
 			<div
-				class="relative flex basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 p-50 text-center text-18/32">
+				class="relative flex basis-[45%] star-bg flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 p-50 text-center text-18/32">
 				<div class="text-start text-54/64 font-medium uppercase">Yral</div>
 				<div class="text-start text-20/28 text-white/60">
 					Fully on-chain SocialFi platform that lets you earn from the time you spend on social
@@ -76,56 +120,65 @@
 					<ArrowUpRightIcon class="w-28 h-28" />
 				</a>
 			</div>
-			<div class="basis-[12.5%] border border-b-0 border-white/20"></div>
+			<div class="basis-[12.5%] star-bg border border-b-0 border-white/20"></div>
 		</div>
 		<div class="flex h-48 w-full gap-0">
 			{#each { length: 5 }}
 				<div
-					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
+					class="h-full star-bg flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
 				</div>
 			{/each}
 		</div>
 		<div class="flex h-144 w-full gap-0">
 			{#each { length: 5 }}
-				<div class="h-full flex-1 border [&:not(:last-child)]:border-r-0 border-white/20"></div>
+				<div class="h-full star-bg flex-1 border [&:not(:last-child)]:border-r-0 border-white/20">
+				</div>
 			{/each}
 		</div>
-		<div class="mt-144 flex h-48 w-full gap-0">
-			{#each { length: 5 }}
+
+		<div class="mt-144 overflow-hidden relative">
+			<canvas class="w-full hidden sm:block absolute z-1 opacity-75" bind:this={canvasEl2}></canvas>
+			<div class="flex h-48 w-full gap-0">
+				{#each { length: 5 }}
+					<div
+						class="h-full star-bg flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
+					</div>
+				{/each}
+			</div>
+			<div class="flex w-full gap-0">
+				<div class="basis-[12.5%] star-bg border border-b-0 border-r-0 border-white/20"></div>
 				<div
-					class="h-full flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
+					class="relative flex star-bg basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 p-50 text-center text-18/32">
+					<div class="text-start text-54/64 font-medium">ICpump.fun</div>
+					<div class="text-start text-20/28 text-white/60">
+						A project that lets you create and trade tokens within minutes, ranging from memecoins
+						to DAOs. A showcase for how DOLR AI empowers you to build the governance economy of your
+						platform, giving power and influence back to your user base.
+					</div>
+					<a
+						href="https://icpump.fun/"
+						target="_blank"
+						class="absolute right-50 top-50 flex items-center gap-8 text-18/28 font-light capitalize text-primary underline-offset-4 hover:underline">
+						<span>Try Now</span>
+						<ArrowUpRightIcon class="w-28 h-28" />
+					</a>
 				</div>
-			{/each}
-		</div>
-		<div class="flex w-full gap-0">
-			<div class="basis-[12.5%] border border-b-0 border-r-0 border-white/20"></div>
-			<div
-				class="relative flex basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 p-50 text-center text-18/32">
-				<div class="text-start text-54/64 font-medium">ICpump.fun</div>
-				<div class="text-start text-20/28 text-white/60">
-					A project that lets you create and trade tokens within minutes, ranging from memecoins to
-					DAOs. A showcase for how DOLR AI empowers you to build the governance economy of your
-					platform, giving power and influence back to your user base.
+				<div
+					class="relative flex star-bg basis-[30%] items-center justify-center group border border-b-0 border-r-0 border-white/20 px-62 py-98 text-18/32">
+					<img
+						src={cubePipe}
+						alt="ICPump.fun"
+						class="w-full max-w-350 object-cover group-hover:scale-105 group-hover:saturate-200 scale:95 transition-all duration-[2s] group-hover:rotate-2" />
+					<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">ICpump.fun</div>
 				</div>
-				<a
-					href="https://icpump.fun/"
-					target="_blank"
-					class="absolute right-50 top-50 flex items-center gap-8 text-18/28 font-light capitalize text-primary underline-offset-4 hover:underline">
-					<span>Try Now</span>
-					<ArrowUpRightIcon class="w-28 h-28" />
-				</a>
+				<div class="basis-[12.5%] star-bg border border-b-0 border-white/20"></div>
 			</div>
-			<div
-				class="relative flex basis-[30%] items-center justify-center border border-b-0 border-r-0 border-white/20 px-62 py-98 text-18/32">
-				<img src={cubePipe} alt="ICPump.fun" class="w-full max-w-350 object-cover" />
-				<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">ICpump.fun</div>
+			<div class="flex h-48 w-full gap-0">
+				{#each { length: 5 }}
+					<div class="h-full star-bg flex-1 border [&:not(:last-child)]:border-r-0 border-white/20">
+					</div>
+				{/each}
 			</div>
-			<div class="basis-[12.5%] border border-b-0 border-white/20"></div>
-		</div>
-		<div class="flex h-48 w-full gap-0">
-			{#each { length: 5 }}
-				<div class="h-full flex-1 border [&:not(:last-child)]:border-r-0 border-white/20"></div>
-			{/each}
 		</div>
 	</div>
 	<div class="w-full pt-60 sm:hidden block">
@@ -207,3 +260,9 @@
 		</div>
 	</div>
 </section>
+
+<style lang="postcss">
+	.star-bg {
+		@apply z-2 bg-black hover:bg-transparent duration-[2s];
+	}
+</style>

@@ -18,16 +18,6 @@
 		scrollY = (event?.target as HTMLDivElement)?.scrollTop || 0;
 	}
 
-	// Initialize Lenis
-	const lenis = new Lenis({
-		autoRaf: true
-	});
-
-	// Listen for the scroll event and log the event data
-	lenis.on('scroll', (e) => {
-		// console.log(e);
-	});
-
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		const items = gsap.utils.toArray('technology-cards');
@@ -49,35 +39,34 @@
 					end: () => '+=' + distance(),
 					pin: pageWrapper,
 					scrub: true,
+					pinSpacing: true,
+					immediateRender: false,
 					invalidateOnRefresh: true // will recalculate any function-based tween values on resize/refresh (making it responsive)
 				}
 			});
 		});
 
-		// let snapSections = gsap.utils.toArray('section');
-		// let snapper: (valueToSnap: number) => number;
-		// ScrollTrigger.create({
-		// 	//@ts-ignore
-		// 	trigger: snapSections[0], // first section
-		// 	start: 'top bottom',
-		// 	//@ts-ignore
-		// 	endTrigger: snapSections[snapSections.length - 1], // last section
-		// 	end: 'bottom top',
-		// 	onRefresh: (self) => {
-		// 		// translate the offsetTop of each section into a progress value between the ScrollTrigger's start and end for snapping
-		// 		let values = snapSections.map((section: any) =>
-		// 			gsap.utils.normalize(self.start, self.end, section.offsetTop)
-		// 		);
-		// 		values.push(1); // make sure it can snap to the end of the last section.
-		// 		snapper = gsap.utils.snap(values); // create a function that'll do the snapping for us. Just pass in a value and it'll return the closest one in the Array.
-		// 	},
-		// 	snap: {
-		// 		snapTo: (value) => snapper(value),
-		// 		duration: { min: 0.2, max: 0.2 },
-		// 		delay: 0,
-		// 		ease: 'power1.inOut'
-		// 	}
-		// });
+		const lenis = new Lenis({
+			autoRaf: true
+		});
+
+		// Listen for the scroll event and log the event data
+		lenis.on('scroll', () => {
+			ScrollTrigger.update();
+		});
+
+		// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+		// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+		gsap.ticker.add((time) => {
+			lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+		});
+
+		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+		gsap.ticker.lagSmoothing(0);
+
+		setTimeout(() => {
+			lenis.resize();
+		}, 3000);
 	});
 </script>
 
