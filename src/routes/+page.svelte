@@ -11,7 +11,6 @@
 	import gsap from 'gsap';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
-	import Lenis from 'lenis';
 
 	let scrollY = $state(0);
 	function handleScroll(event: Event) {
@@ -45,28 +44,6 @@
 				}
 			});
 		});
-
-		const lenis = new Lenis({
-			autoRaf: true
-		});
-
-		// Listen for the scroll event and log the event data
-		lenis.on('scroll', () => {
-			ScrollTrigger.update();
-		});
-
-		// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-		// This ensures Lenis's smooth scroll animation updates on each GSAP tick
-		gsap.ticker.add((time) => {
-			lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-		});
-
-		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
-		gsap.ticker.lagSmoothing(0);
-
-		setTimeout(() => {
-			lenis.resize();
-		}, 3000);
 	});
 </script>
 

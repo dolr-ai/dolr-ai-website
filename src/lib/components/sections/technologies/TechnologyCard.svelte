@@ -8,12 +8,48 @@
 	let { title, description, image }: TechnologyCardProps = $props();
 
 	let titleParts = title.split(' ');
+	let canvasEl = $state<HTMLCanvasElement>();
+
+	function random(min: number, max: number) {
+		return min + Math.random() * (max + 1 - min);
+	}
+
+	function drawStars(canvasEl: HTMLCanvasElement) {
+		if (!canvasEl) return;
+		const ctx = canvasEl.getContext('2d');
+
+		canvasEl.width = window.innerWidth;
+		canvasEl.height = window.innerHeight;
+
+		function stars() {
+			if (!ctx || !canvasEl) return;
+
+			for (let i = 0; i < 2500; i++) {
+				//Set up random elements
+				let xPos = random(2, canvasEl.width - 2);
+				let yPos = random(2, canvasEl.height - 2);
+				let size = random(0.1, 0.5);
+
+				//Add stars
+				ctx.fillStyle = '#ffffff';
+				ctx.fillRect(xPos, yPos, size, size);
+			}
+		}
+
+		stars();
+	}
+
+	$effect(() => {
+		canvasEl && drawStars(canvasEl);
+	});
 </script>
 
 <technology-card
-	class="p-2 flex w-full sm:w-656 bg-white/10 relative rounded-16 sm:rounded-32 overflow-hidden shrink-0">
+	class="p-2 flex w-full group sm:w-656 bg-white/10 relative rounded-16 sm:rounded-32 overflow-hidden shrink-0">
 	<div class="glow"></div>
 	<div class="fake-glow"></div>
+	<canvas class="absolute z-1 opacity-0 group-hover:opacity-75 duration-1000" bind:this={canvasEl}>
+	</canvas>
 	<div
 		class="relative bg-black/75 w-full rounded-16 sm:rounded-32 flex shrink-0 flex-col overflow-hidden">
 		<div class="flex flex-col gap-12 z-2 px-16 sm:px-44 py-24">
