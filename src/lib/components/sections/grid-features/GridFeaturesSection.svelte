@@ -45,7 +45,7 @@
 
 <section
 	class="sm:h-screen mt-108 w-full h-screen snap-always snap-start gap-0 bg-black font-switzer text-white">
-	<canvas class="w-full hidden sm:block absolute z-1 opacity-75" bind:this={canvasEl}></canvas>
+	<canvas class="w-full hidden sm:block absolute z-1 opacity-90" bind:this={canvasEl}></canvas>
 	<div class="hidden h-full sm:flex sm:flex-col sm:items-center">
 		<div class="h-144 flex w-full gap-0">
 			{#each { length: 5 }}

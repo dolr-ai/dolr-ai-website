@@ -70,7 +70,7 @@
 		</div>
 	</div>
 	<div class="w-full pt-120 sm:block hidden relative">
-		<canvas class="w-full hidden sm:block absolute z-1 opacity-75" bind:this={canvasEl}></canvas>
+		<canvas class="w-full hidden sm:block absolute z-1 opacity-90" bind:this={canvasEl}></canvas>
 		<div class="flex w-full gap-0">
 			<div class="basis-[12.5%] star-bg border border-b-0 border-r-0 border-white/20"></div>
 			<div
