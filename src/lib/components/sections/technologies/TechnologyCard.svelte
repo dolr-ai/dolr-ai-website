@@ -48,7 +48,7 @@
 	class="p-2 flex w-full group sm:w-656 bg-white/10 relative rounded-16 sm:rounded-32 overflow-hidden shrink-0">
 	<div class="glow"></div>
 	<div class="fake-glow"></div>
-	<canvas class="absolute z-1 opacity-0 group-hover:opacity-75 duration-1000" bind:this={canvasEl}>
+	<canvas class="absolute z-1 opacity-20 group-hover:opacity-75 duration-300" bind:this={canvasEl}>
 	</canvas>
 	<div
 		class="relative bg-black/75 w-full rounded-16 sm:rounded-32 flex shrink-0 flex-col overflow-hidden">
