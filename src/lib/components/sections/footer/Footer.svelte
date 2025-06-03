@@ -10,6 +10,8 @@
 
 <script lang="ts">
 	import ArrowUpRightIcon from '$lib/assets/ArrowUpRightIcon.svelte';
+	import CoinGeckoLogo from '$lib/assets/CoinGeckoLogo.svelte';
+	import CoinMarketCapLogo from '$lib/assets/CoinMarketCapLogo.svelte';
 
 	import DolrBrandLogo from '$lib/assets/DolrBrandLogo.svelte';
 	import DolrBrandText from '$lib/assets/DolrBrandText.svelte';
@@ -55,10 +57,16 @@
 				</div>
 				<div class="flex items-center gap-16">
 					<a href="https://x.com/DOLR_AI" target="_blank">
-						<XIcon class="w-24 h-24"></XIcon>
+						<XIcon class="size-24" />
 					</a>
 					<a href="https://t.me/sjhehgdfgzeh" target="_blank">
-						<TelegramIcon class="w-24 h-24"></TelegramIcon>
+						<TelegramIcon class="size-24" />
+					</a>
+					<a href="https://coinmarketcap.com/currencies/dolr-ai/" target="_blank">
+						<CoinMarketCapLogo class="size-24 text-white/60" />
+					</a>
+					<a href="https://www.coingecko.com/en/coins/dolr-ai" target="_blank">
+						<CoinGeckoLogo class="size-24" />
 					</a>
 				</div>
 			</div>

@@ -4,7 +4,6 @@
 	import ArrowUpRightIcon from '$lib/assets/ArrowUpRightIcon.svelte';
 
 	let canvasEl = $state<HTMLCanvasElement>();
-	let canvasEl2 = $state<HTMLCanvasElement>();
 
 	function random(min: number, max: number) {
 		return min + Math.random() * (max + 1 - min);
@@ -37,10 +36,6 @@
 
 	$effect(() => {
 		canvasEl && drawStars(canvasEl);
-	});
-
-	$effect(() => {
-		canvasEl2 && drawStars(canvasEl2);
 	});
 </script>
 
@@ -135,51 +130,6 @@
 				</div>
 			{/each}
 		</div>
-
-		<div class="mt-144 overflow-hidden relative">
-			<canvas class="w-full hidden sm:block absolute z-1 opacity-75" bind:this={canvasEl2}></canvas>
-			<div class="flex h-48 w-full gap-0">
-				{#each { length: 5 }}
-					<div
-						class="h-full star-bg flex-1 border border-b-0 [&:not(:last-child)]:border-r-0 border-white/20">
-					</div>
-				{/each}
-			</div>
-			<div class="flex w-full gap-0">
-				<div class="basis-[12.5%] star-bg border border-b-0 border-r-0 border-white/20"></div>
-				<div
-					class="relative flex star-bg basis-[45%] flex-col justify-end gap-40 border border-b-0 border-r-0 border-white/20 p-50 text-center text-18/32">
-					<div class="text-start text-54/64 font-medium">ICpump.fun</div>
-					<div class="text-start text-20/28 text-white/60">
-						A project that lets you create and trade tokens within minutes, ranging from memecoins
-						to DAOs. A showcase for how DOLR AI empowers you to build the governance economy of your
-						platform, giving power and influence back to your user base.
-					</div>
-					<a
-						href="https://icpump.fun/"
-						target="_blank"
-						class="absolute right-50 top-50 flex items-center gap-8 text-18/28 font-light capitalize text-primary underline-offset-4 hover:underline">
-						<span>Try Now</span>
-						<ArrowUpRightIcon class="w-28 h-28" />
-					</a>
-				</div>
-				<div
-					class="relative flex star-bg basis-[30%] items-center justify-center group border border-b-0 border-r-0 border-white/20 px-62 py-98 text-18/32">
-					<img
-						src={cubePipe}
-						alt="ICPump.fun"
-						class="w-full max-w-350 object-cover group-hover:scale-105 group-hover:saturate-200 scale:95 transition-all duration-[2s] group-hover:rotate-2" />
-					<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">ICpump.fun</div>
-				</div>
-				<div class="basis-[12.5%] star-bg border border-b-0 border-white/20"></div>
-			</div>
-			<div class="flex h-48 w-full gap-0">
-				{#each { length: 5 }}
-					<div class="h-full star-bg flex-1 border [&:not(:last-child)]:border-r-0 border-white/20">
-					</div>
-				{/each}
-			</div>
-		</div>
 	</div>
 	<div class="w-full pt-60 sm:hidden block">
 		<div class="flex w-full gap-0">
@@ -218,30 +168,6 @@
 				<div class="border-t-1 border-t-white/20 flex items-center justify-center p-24">
 					<a
 						href="https://yral.com"
-						target="_blank"
-						class="text-18/28 font-light uppercase text-primary underline-offset-4 hover:underline">
-						<span>Try Now</span>
-						<ArrowUpRightIcon class="w-28 h-28" />
-					</a>
-				</div>
-				<div class="border-t-1 h-100 border-t-white/20 flex items-center justify-center p-24"></div>
-				<div
-					class="border-t-1 border-t-white/20 flex items-center py-24 px-16 relative justify-center">
-					<img src={cubePipe} alt="ICPump.fun" class="w-full max-w-180 object-cover" />
-					<div class="absolute left-12 top-12 text-10/14 uppercase text-white/50">ICpump.fun</div>
-				</div>
-				<div
-					class="border-t-1 border-t-white/20 flex flex-col items-start relative justify-center p-24">
-					<div class="text-24/36">ICpump.fun</div>
-					<div class="text-14/20 text-left text-white/60">
-						A project that lets you create and trade tokens within minutes, ranging from memecoins
-						to DAOs. A showcase for how DOLR AI empowers you to build the governance economy of your
-						platform, giving power and influence back to your user base.
-					</div>
-				</div>
-				<div class="border-t-1 border-white/20 border-b-1 flex items-center justify-center p-24">
-					<a
-						href="https://icpump.fun/"
 						target="_blank"
 						class="text-18/28 font-light uppercase text-primary underline-offset-4 hover:underline">
 						<span>Try Now</span>
